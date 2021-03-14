@@ -10,7 +10,7 @@
                     <ShareIcon></ShareIcon>
                 </a>
             </li>
-            <li class="fab-buttons__item" @click="$emit('switchLayout', true)" v-if="!isDesktop">
+            <!-- <li class="fab-buttons__item" @click="$emit('switchLayout', true)" v-if="!isDesktop">
                 <a href="javascript:;" class="fab-buttons__link" :data-tooltip="$t('fab.dashboard')">
                     <DashboardIcon></DashboardIcon>
                 </a>
@@ -19,7 +19,7 @@
                 <a href="javascript:;" class="fab-buttons__link" :data-tooltip="$t('fab.scroll')">
                     <ScrollIcon></ScrollIcon>
                 </a>
-            </li>
+            </li> -->
             <li class="fab-buttons__item" @click="goToGithub">
                 <a href="javascript:;" class="fab-buttons__link" :data-tooltip="$t('fab.github')">
                     <GithubIcon></GithubIcon>
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-    import DashboardIcon from 'mdi-vue/ViewDashboard'
-    import ScrollIcon from 'mdi-vue/ViewDay'
+    // import DashboardIcon from 'mdi-vue/ViewDashboard'
+    // import ScrollIcon from 'mdi-vue/ViewDay'
     import ShareIcon from 'mdi-vue/ShareVariant'
     import SettingsIcon from 'mdi-vue/Cog'
     import GithubIcon from 'mdi-vue/Github'
@@ -39,8 +39,8 @@
         name: "FAB",
         props: ["isDesktop"],
         components: {
-            DashboardIcon,
-            ScrollIcon,
+            // DashboardIcon,
+            // ScrollIcon,
             ShareIcon,
             SettingsIcon,
             GithubIcon

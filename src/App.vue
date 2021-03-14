@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="mContent" v-if="dataGlobal || dataUk" :class="{mContentDesktop: desktopLayout}">
+    <div class="mContent" v-if="dataGlobal || dataUk" :class="{mContentDesktop: desktopLayout,noscroll:showIframe}">
       <div :class="{'d-flex': desktopLayout}">
         <div :class="{'mSectionDesktop': desktopLayout}">
           <!-- header section -->
@@ -84,6 +84,17 @@
               :isUk="isUkRealtime"
             ></ChartSection>
           </div> -->
+
+          <div class="title">长图分享</div>
+          <div class="mBlock" @click="showIframe = true">
+                <div class="showMore" style="color:#007bff;font-size:1.2em">点击生成截图分享给好友</div>
+              </div>
+        </div>
+
+
+        <div class="shareScreenshot" v-if="showIframe">
+          <div class="close" @click="showIframe = false">×</div>
+          <iframe src="https://shadowhusky.tech"></iframe>
         </div>
 
         <!-- nav bar -->
@@ -120,8 +131,8 @@
           </div> -->
 
           <!-- analysis -->
-          <div class="mSection" :class="{'mSectionDesktop': desktopLayout}" id="analysis">
-            <div v-if="dataUk && isCurrentUk">
+          <div class="mSection" v-if="dataUk && isCurrentUk" :class="{'mSectionDesktop': desktopLayout}" id="analysis">
+            <div >
               <UkDetailSection :dataUk="dataUk"></UkDetailSection>
             </div>
             <!-- <div v-if="dataGlobal">
@@ -326,7 +337,8 @@ export default {
       hideFab: false,
       startDate: null,
       endDate: null,
-      countryName: null
+      countryName: null,
+      showIframe: false,
     };
   },
   async mounted() {
@@ -635,6 +647,34 @@ export default {
 </script>
 
 <style scoped>
+.shareScreenshot{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: white;
+}
+.shareScreenshot iframe{
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.noscroll { 
+  overflow: hidden;
+  height: 100vh;
+}
+.shareScreenshot .close{
+  position: fixed;
+  right: 10%;
+  top: 10%;
+  font-size: 3em;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+}
+
 .vertical-center {
   margin: 0;
   position: absolute;
