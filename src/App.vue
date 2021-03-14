@@ -39,7 +39,7 @@
           </div>
 
           <!-- time machine -->
-          <div v-if="renderAll && endDate && dataGlobal">
+          <!-- <div v-if="renderAll && endDate && dataGlobal">
             <div class="title">{{ $t('subtitles.timeMachine') }}</div>
             <div class="mBlock">
               <SlideController
@@ -70,7 +70,7 @@
                 @click="revertTM"
               >{{ $t('tmRevert') }}</span>
             </div>
-          </div>
+          </div> -->
 
           <!-- loading -->
           <div v-if="!renderAll" class="mSection">
@@ -78,16 +78,16 @@
           </div>
 
           <!-- charts (show on desktop layout) -->
-          <div class="mSection" v-if="renderAll && desktopLayout" style="padding-top: 0">
+          <!-- <div class="mSection" v-if="renderAll && desktopLayout" style="padding-top: 0">
             <ChartSection
               :chartData="chartData ? chartData : dataCurrent.history"
               :isUk="isUkRealtime"
             ></ChartSection>
-          </div>
+          </div> -->
         </div>
 
         <!-- nav bar -->
-        <div id="navPlaceholder" ref="navPlaceholder" v-if="renderAll && !desktopLayout"></div>
+        <!-- <div id="navPlaceholder" ref="navPlaceholder" v-if="renderAll && !desktopLayout"></div>
         <div class="mNav" ref="nav" id="mNavbar" v-if="renderAll && !desktopLayout">
           <ul
             class="nav nav-pills nav-fill"
@@ -103,7 +103,7 @@
               <a class="nav-link" href="#regionData">{{ $t('nav.map') }}</a>
             </li>
           </ul>
-        </div>
+        </div> -->
 
         <div
           v-if="renderAll"
@@ -111,20 +111,20 @@
           v-scroll-spy="{data: 'section', offset: 100, allowNoActive: false}"
         >
           <!-- charts (show on mobile layout) -->
-          <div class="mSection" v-if="!desktopLayout" id="charts" style="padding-top: 0">
+          <!-- <div class="mSection" v-if="!desktopLayout" id="charts" style="padding-top: 0">
             <ChartSection
               v-if="dataCurrent.history || chartData"
               :chartData="chartData ? chartData : dataCurrent.history"
               :isUk="isUkRealtime"
             ></ChartSection>
-          </div>
+          </div> -->
 
           <!-- analysis -->
           <div class="mSection" :class="{'mSectionDesktop': desktopLayout}" id="analysis">
             <div v-if="dataUk && isCurrentUk">
               <UkDetailSection :dataUk="dataUk"></UkDetailSection>
             </div>
-            <div v-if="dataGlobal">
+            <!-- <div v-if="dataGlobal">
               <div class="title">{{ $t('subtitles.historyAnimation') }}</div>
               <BarRaceSection v-if="hasTableData" :countryName="countryName" :table-data="tableData"></BarRaceSection>
               <div class="title">{{ $t('subtitles.ratio') }}</div>
@@ -135,15 +135,15 @@
               ></PieSection>
               <div class="title">{{ $t('subtitles.countryCompare') }}</div>
               <CountryCompareSection :global-data="dataGlobal" :country-list="countryList"></CountryCompareSection>
-            </div>
+            </div> -->
             
             <!-- global data load button if not shown -->
-            <div v-if="dataUk && !dataGlobal">
+            <!-- <div v-if="dataUk && !dataGlobal">
               <div class="title">{{ $t('nav.analysis') }}</div>
               <div class="mBlock" @click="loadAdditionalUkAndGlobalData">
                 <div class="showMore">{{ $t('loadWorldAnalysis') }}</div>
               </div>
-            </div>
+            </div> -->
           </div>
 
           <!-- map and table -->
@@ -155,7 +155,7 @@
               :countryName="countryName"
               :mainDate="mainDate"
             ></MapSection>
-            <br />
+            <!-- <br />
             <div class="title">{{ $t('subtitles.regionList') }}</div>
             <RegionTable
               :regionData="tableData"
@@ -166,7 +166,7 @@
               @switchCountry="switchCountry"
               :currentCountry="currentCountry"
               :desktopLayout="desktopLayout"
-            ></RegionTable>
+            ></RegionTable> -->
           </div>
         </div>
       </div>
@@ -174,9 +174,9 @@
       <!-- share and credit -->
       <div class="mSection" id="share" :class="{mContent:desktopLayout}">
         <Credits
-          :isMiniApp="isMiniApp"
+          :isMiniApp="true"
           :isLocaleCN="isLocaleCN"
-          :showWechatPopup="showWechatPopup"
+          :showWechatPopup="false"
           :lastUpdated="lastUpdated"
           :changeLang="changeLang"
           :isWeChat="isWeChat"
@@ -220,7 +220,7 @@
 <script>
 import TodayNumberSection from "./components/analysis/TodayNumberSection.vue";
 import UkRegionSection from "./components/uk/UkRegionSection.vue";
-import SlideController from "./components/common/SlideController.vue";
+// import SlideController from "./components/common/SlideController.vue";
 import NearbyCasesFinder from "./components/analysis/NearbyCasesFinder.vue";
 import FAB from "./components/common/FAB.vue";
 import Credits from "./components/common/Credits.vue";
@@ -228,30 +228,30 @@ import Loading from "./components/common/Loading.vue";
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
 
-const RegionTable = () => ({
-  component: import("./components/analysis/RegionTable.vue"),
-  loading: Loading,
-});
-const BarRaceSection = () => ({
-  component: import("./components/barrace/BarRaceSection.vue"),
-  loading: Loading,
-});
+// const RegionTable = () => ({
+//   component: import("./components/analysis/RegionTable.vue"),
+//   loading: Loading,
+// });
+// const BarRaceSection = () => ({
+//   component: import("./components/barrace/BarRaceSection.vue"),
+//   loading: Loading,
+// });
 const MapSection = () => ({
   component: import("./components/map/MapSection.vue"),
   loading: Loading,
 });
-const ChartSection = () => ({
-  component: import("./components/charts/ChartSection.vue"),
-  loading: Loading,
-});
-const CountryCompareSection = () => ({
-  component: import("./components/analysis/CountryCompareSection.vue"),
-  loading: Loading,
-});
-const PieSection = () => ({
-  component: import("./components/analysis/PieSection.vue"),
-  loading: Loading,
-});
+// const ChartSection = () => ({
+//   component: import("./components/charts/ChartSection.vue"),
+//   loading: Loading,
+// });
+// const CountryCompareSection = () => ({
+//   component: import("./components/analysis/CountryCompareSection.vue"),
+//   loading: Loading,
+// });
+// const PieSection = () => ({
+//   component: import("./components/analysis/PieSection.vue"),
+//   loading: Loading,
+// });
 const UkDetailSection = () => ({
   component: import("./components/uk/UkDetailSection.vue"),
   loading: Loading,
@@ -271,16 +271,16 @@ const moment = require("moment");
 export default {
   name: "App",
   components: {
-    RegionTable,
-    BarRaceSection,
-    ChartSection,
-    PieSection,
+    // RegionTable,
+    // BarRaceSection,
+    // ChartSection,
+    // PieSection,
     TodayNumberSection,
     UkRegionSection,
     vSelect,
     MapSection,
-    SlideController,
-    CountryCompareSection,
+    // SlideController,
+    // CountryCompareSection,
     FAB,
     NearbyCasesFinder,
     Credits,
@@ -332,9 +332,7 @@ export default {
   async mounted() {
     window.dateFormat = "DD MMM YY";
     let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (this.isWeChat()) {
-      this.$i18n.locale = "zh";
-    }
+    this.$i18n.locale = "zh";
     this.isLocaleCN = this.$i18n.locale === "zh";
     document.title = this.$t("pageTitle");
     window.dateFormat = this.$t("dateFormat");
@@ -592,7 +590,7 @@ export default {
 
       let checkLayout = () => {
         this.isDesktop = window.innerWidth > 1200;
-        this.desktopLayout = window.innerWidth > 1400;
+        this.desktopLayout = false
       };
 
       window.onresize = checkLayout;

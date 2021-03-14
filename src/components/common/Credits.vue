@@ -29,16 +29,7 @@
           </div>
         </div>
 
-        <!-- Mini app fallback (as not external link should exists) -->
-        <div v-if="isMiniApp">
-          <br />
-          <div class="title">{{ $t('subtitles.about') }}</div>
-          <ul>
-            <li>请使用浏览器访问 covid19.uclcssa.cn 以获取本页面数据来源及更新时间</li>
-            <li>本页面开源于Github，欢迎提供任何建议及贡献！</li>
-            <li>作者：©2020 Henry (@henryz00), Davies (@DaviesXue) | UCLCSSA 伦敦大学学院中国学联</li>
-          </ul>
-        </div>
+
       </div>
 
       <!-- source and credits -->
@@ -119,20 +110,20 @@
     </div>
 
     <div v-if="isMiniApp && isLocaleCN && !showWechatPopup">
-      <MiniAppPostOverlay></MiniAppPostOverlay>
+      <!-- <MiniAppPostOverlay></MiniAppPostOverlay> -->
     </div>
   </div>
 </template>
 
 <script>
 import ShareIcons from "./ShareIcons.vue";
-import MiniAppPostOverlay from "./MiniAppPostOverlay.vue";
+// import MiniAppPostOverlay from "./MiniAppPostOverlay.vue";
 
 export default {
   name: "Credits",
   props: ["isMiniApp", "isLocaleCN", "isWeChat", "showWechatPopup", "lastUpdated", "changeLang"],
   components: {
-    MiniAppPostOverlay,
+    // MiniAppPostOverlay,
     ShareIcons,
   },
 };
