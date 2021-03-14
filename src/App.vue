@@ -259,7 +259,7 @@ const UkDetailSection = () => ({
 
 import {
   getGlobalHistoryTableData,
-  getAllCountries,
+  // getAllCountries,
   getCountryData,
   getCountryHistoryData,
   getUSRegionData,
@@ -398,8 +398,8 @@ export default {
               );
             });
             console.timeEnd("getGlobalHistoryTableData");
-            let countryArr = getAllCountries(this.dataGlobal.confirmed.locations);
-            this.updateCountryList(countryArr)
+            // let countryArr = getAllCountries(this.dataGlobal.confirmed.locations);
+            this.updateCountryList()
 
             let performanceTime = Math.round(
               performance.now() - performanceTimeStart
@@ -563,7 +563,7 @@ export default {
         this.shouldRender = true;
       });
     },
-    updateCountryList(countryArr){
+    updateCountryList(){
       this.countryList = [
             this.$t("selector.world"),
             this.$t("selector.uk"),
