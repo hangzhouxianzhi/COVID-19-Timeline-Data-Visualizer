@@ -568,7 +568,6 @@ export default {
             this.$t("selector.world"),
             this.$t("selector.uk"),
             this.$t("selector.us"),
-            ...countryArr,
           ];
     },
     isWeChat() {
