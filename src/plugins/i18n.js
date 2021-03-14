@@ -155,8 +155,8 @@ const messages = {
     daily: "Daily ",
   },
   zh: {
-    pageTitle: "COVID-19 实时疫情数据跟踪 - UCLCSSA 中国学联",
-    title: "实时数据动态",
+    pageTitle: "COVID-19 实时疫情数据跟踪 - 留学与海",
+    title: "实时疫情动态",
     dateFormat: "MM/DD/YY",
     launchIndicator: [
       "在微信中将此页面设为浮窗，方便第一时间获取更新",
@@ -293,6 +293,7 @@ const messages = {
     daily: "日",
   },
 };
+
 
 // eslint-disable-next-line no-unused-vars
 export const i18n = new VueI18n({

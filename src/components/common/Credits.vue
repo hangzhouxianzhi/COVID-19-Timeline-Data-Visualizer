@@ -12,10 +12,10 @@
         <div class="title">实时更新订阅</div>
         <div class="mBlock" style="text-align: center;padding:30px">
           <div>
-            微信扫描或长按下方二维码，或搜索"
-            <span style="text-wrap: none">UCLCSSA学联社区</span>"
+            微信扫描或长按下方二维码，或微信公众号搜索"
+            <span style="text-wrap: none">留学与海</span>"
           </div>
-          <img src="../../assets/qr.png" style="max-width: 260px;" />
+          <img src="../../assets/qr.jpg" style="max-width: 200px;" />
           <div>订阅每日实时数据更新及重要预警通知</div>
           <div
             v-if="isLocaleCN && isWeChat()"
@@ -100,12 +100,13 @@
       </div>
 
       <!-- logo and language switch -->
-      <div style="text-align: center;margin: 50px 0;opacity: 0.5;color: silver;">
-        <img src="../../assets/logo_grey.png" style="max-width: 200px;" v-if="isLocaleCN" />
+      <div style="text-align: center;margin: 50px 0;color: silver;">
+        <!-- <img src="../../assets/logo_grey.png" style="max-width: 200px;" v-if="isLocaleCN" />
         <br />
         <br />
         <a href="#" @click="changeLang('en')">English</a> |
-        <a href="#" @click="changeLang('zh')">中文</a>
+        <a href="#" @click="changeLang('zh')">中文</a> -->
+        ©2021 版权所有 留学与海 & 闲知科技
       </div>
     </div>
 

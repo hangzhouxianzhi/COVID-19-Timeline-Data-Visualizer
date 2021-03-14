@@ -15,7 +15,7 @@
               ></vSelect>
             </div>
             <div class="header_title">
-              <h2>COVID-19</h2>
+              <h2>留学与海</h2>
               <h3 v-html="$t('title')"></h3>
             </div>
           </div>
