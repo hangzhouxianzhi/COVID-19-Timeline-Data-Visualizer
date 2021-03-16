@@ -368,13 +368,13 @@ export default {
   },
   methods: {
     async initLocation(timezone) {
-      if (timezone.includes("Europe/London") || this.isMiniApp) {
-        this.currentCountry = this.countryList[1];
-      } else if (timezone.includes("America")) {
-        this.currentCountry = this.countryList[3];
-      } else {
-        this.currentCountry = this.countryList[0];
-      }
+      // if (timezone.includes("Europe/London") || this.isMiniApp) {
+      this.currentCountry = this.countryList[1];
+      // } else if (timezone.includes("America")) {
+      //   this.currentCountry = this.countryList[3];
+      // } else {
+      //   this.currentCountry = this.countryList[0];
+      // }
       this.switchCountry(this.currentCountry);
       window.ga(
         "send",
