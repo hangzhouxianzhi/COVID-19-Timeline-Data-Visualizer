@@ -355,12 +355,12 @@ export default {
     
     this.updateCountryList(countryList)
 
-    const lastCountry = localStorage.getItem("lastCountry");
-    if (lastCountry) {
-      this.switchCountry(lastCountry);
-    } else {
+    // const lastCountry = localStorage.getItem("lastCountry");
+    // if (lastCountry) {
+    //   this.switchCountry(lastCountry);
+    // } else {
       this.initLocation(timeZone);
-    }
+    // }
 
     setTimeout(() => {
       this.showWechatPopup = false;
